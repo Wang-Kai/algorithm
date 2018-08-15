@@ -11,7 +11,10 @@ func main() {
 	fmt.Println(arr)
 }
 
-// insert sort
+/*
+	insert sort
+	最坏运行时间：𝚯(n * n)
+*/
 func InsertionSort(params []int) {
 	if len(params) == 1 {
 		return

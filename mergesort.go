@@ -1,20 +1,8 @@
-package main
-
-import (
-	"fmt"
-)
-
-func main() {
-	var arr = []int{51, 30, 235, 75, 9, 24, 42, 486, 0, 190}
-
-	// InsertionSort(arr)
-	MergeSort(arr, 0, len(arr)-1)
-
-	fmt.Println(arr)
-}
+package sort
 
 /*
 	Merger sort
+	最坏运行时间：𝚯(n * lgn)
 */
 func MergeSort(arr []int, from, to int) {
 	if from < to {
@@ -59,31 +47,5 @@ func merge(arr []int, p, q, r int) {
 				break
 			}
 		}
-	}
-}
-
-//-------------------------------------------------------
-
-/*
-	insert sort
-	最坏运行时间：𝚯(n * n)
-*/
-func InsertionSort(params []int) {
-	if len(params) == 1 {
-		return
-	}
-
-	for i := 1; i < len(params); i++ {
-		var key = params[i]
-
-		j := i - 1
-
-		for j >= 0 && params[j] > key {
-			params[i] = params[j]
-			i = j
-			j--
-		}
-
-		params[j+1] = key
 	}
 }
